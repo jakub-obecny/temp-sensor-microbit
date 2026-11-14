@@ -6,6 +6,8 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 datalogger.onLogFull(function () {
     basic.showIcon(IconNames.Sad)
+    pauseUntil(() => input.buttonIsPressed(Button.AB))
+    datalogger.deleteLog(datalogger.DeleteType.Full)
 })
 let temp = 0
 let input2 = 0
